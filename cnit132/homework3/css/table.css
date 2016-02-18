@@ -38,11 +38,6 @@ nav li {
   justify-content: center;
 }
 
-nav li:nth-of-type(3) {
-  width: 100px;
-  padding: 10px;
-}
-
 nav li a {
   width: 100px;
   padding: 10px;
