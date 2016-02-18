@@ -1,0 +1,122 @@
+body
+      {margin-top: 20px; background-color: #000000;
+       text-align:center; /* Hack for IE/Win */
+      }
+
+
+#content {
+	width:950px;
+	margin: 0px auto; padding: 5px;
+        text-align: left; /* Counteract to IE/Win Hack */
+	border:1px dashed #333;
+	background-color:#eee
+         }
+
+
+/* NAVIGATION */
+
+
+.mainNav {
+  width: 500px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+.mainNav li {
+  float: left;
+  margin: 0 auto;
+}
+.mainNav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: .8em;
+  text-align: center;
+  border: 1px dashed #555455;
+  border-bottom: none;
+  padding: 5px;
+  background-color: #cccccc;
+}
+
+h2 {
+
+background-image: url('../img/kitten.jpeg');
+color: #a020f0;
+text-align: center;
+margin-top: 30px;
+margin-left: 95px;
+margin-right: 95px;
+font-weight: bold; font-style:normal; font-variant:normal; font-size:22pt; font-family:Arial
+}
+
+
+p.main  {
+font: 14pt 'Times New Roman';
+color: #81b69a;
+background: #000000;
+text-indent: .3in;
+margin-left: 85px;
+margin-right: 85px;
+text-align: justify;
+border: solid;
+padding: 15px;
+}
+
+
+p.lil {
+font-size: 15pt;
+text-align: center;
+font-weight: bold;
+margin-left: 180px;
+margin-right: 180px;
+color: #000000;
+background: #ff5200;
+font-variant: small-caps;
+}
+
+p.newext {
+  font-size: 15px;
+  text-align: center;
+  font-weight: normal;
+  margin-left: 150px;
+  margin-right: 150px;
+  color: #5c2aff;
+  background: #cccccc;
+  line-height: 25px;
+}
+
+#new  {
+font-family: 'Georgia';
+padding: 5px;
+line-height: 15pt;
+border-style: ridge;
+border: 3px solid black;
+background-color: #deb887;
+font-size: 12pt;color: #ff0000;
+text-align: justify;
+font-weight: bold;
+margin-left: 150px;
+margin-right: 250px;
+width: 600px;
+      }
+
+a {
+
+color: #a020f0; text-decoration: none;
+}
+
+
+a:hover { color:#8f0052;
+text-decoration: underline;
+background-color: #00ff11;
+}
+
+
+address
+{
+font-family: 'Futura', sans-serif;
+font-size: 15pt;
+font-weight: bold;
+color: #000000;
+}
+
+
+.center {text-align: center;}

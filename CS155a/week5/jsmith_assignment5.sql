@@ -1,0 +1,86 @@
+-- Justin Smith
+
+USE bookstore;
+
+-- Query 1
+
+SELECT last_name,
+       first_name,
+       customer_id
+FROM customer
+WHERE customer_id BETWEEN 22229 AND 66669;
+
+-- Query 2
+
+SELECT first_name,
+       last_name,
+       salary
+FROM employee
+WHERE salary NOT IN(3400,
+                    3000,
+                    6000)
+  AND last_name LIKE 's%';
+
+-- Query 3
+
+SELECT order_id AS "order ID",
+       order_date AS "order date",
+       ship_date AS "ship date"
+FROM orders
+WHERE ship_date IS NULL;
+
+-- Query 4
+
+SELECT last_name,
+       first_name
+FROM customer
+WHERE last_name LIKE '%IN%'
+ORDER BY last_name,
+         first_name;
+
+-- Query 5
+
+SELECT product_id AS "product ID",
+       product_name AS "product name",
+       list_price AS "product price"
+FROM product
+WHERE list_price > 30.00
+  AND list_price < 900.00;
+
+-- Query 6
+
+SELECT order_id AS "order ID",
+       order_date AS "order date"
+FROM orders
+WHERE month(order_date) LIKE '%3%'
+  AND year(order_date) LIKE '%%15';
+
+-- Query 7
+
+SELECT order_id AS "order ID",
+       ship_date AS "ship date"
+FROM orders
+WHERE ship_date > "2009-04-01";
+
+-- Query 8
+
+SELECT order_id AS "order ID",
+       order_date AS "order date"
+FROM orders
+WHERE order_date < "2015-04-01";
+
+-- Query 9
+
+SELECT product_id AS "product ID",
+       product_code AS "product code",
+       product_name AS "product name"
+FROM product
+WHERE product_name LIKE '_e_l%'
+ORDER BY product_code DESC;
+
+-- Query 10
+
+SELECT product_id, category_id, vendor_id, list_price
+FROM product
+WHERE category_id IN(11, 61) AND vendor_id IN(1, 2)
+  AND list_price < 1100.00;

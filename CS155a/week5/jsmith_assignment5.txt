@@ -1,0 +1,252 @@
+--------------
+-- Justin Smith
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+-- Query 1
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT last_name,
+       first_name,
+       customer_id
+FROM customer
+WHERE customer_id BETWEEN 22229 AND 66669
+--------------
+
++-----------+------------+-------------+
+| last_name | first_name | customer_id |
++-----------+------------+-------------+
+| Zimmer    | Barry      |       22229 |
+| Brown     | Christine  |       33339 |
+| Goldstein | David      |       44449 |
+| Valentino | Erin       |       55559 |
+| Wilson    | Frank Lee  |       66669 |
++-----------+------------+-------------+
+5 rows in set (0.00 sec)
+
+--------------
+-- Query 2
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT first_name,
+       last_name,
+       salary
+FROM employee
+WHERE salary NOT IN(3400,
+                    3000,
+                    6000)
+  AND last_name LIKE 's%'
+--------------
+
++------------+-----------+---------+
+| first_name | last_name | salary  |
++------------+-----------+---------+
+| Mary       | Stuart    | 2800.00 |
++------------+-----------+---------+
+1 row in set (0.00 sec)
+
+--------------
+-- Query 3
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT order_id AS "order ID",
+       order_date AS "order date",
+       ship_date AS "ship date"
+FROM orders
+WHERE ship_date IS NULL
+--------------
+
++----------+---------------------+-----------+
+| order ID | order date          | ship date |
++----------+---------------------+-----------+
+|        5 | 2015-03-31 05:43:11 | NULL      |
+|        6 | 2015-03-31 18:37:22 | NULL      |
+|        8 | 2015-04-02 11:26:38 | NULL      |
+|        9 | 2015-04-03 12:22:31 | NULL      |
+|       10 | 2015-05-03 12:22:31 | NULL      |
+|       11 | 2015-06-03 12:22:31 | NULL      |
++----------+---------------------+-----------+
+6 rows in set (0.00 sec)
+
+--------------
+-- Query 4
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT last_name,
+       first_name
+FROM customer
+WHERE last_name LIKE '%IN%'
+ORDER BY last_name,
+         first_name
+--------------
+
++-----------+------------+
+| last_name | first_name |
++-----------+------------+
+| Goldstein | David      |
+| Valentino | Erin       |
++-----------+------------+
+2 rows in set (0.00 sec)
+
+--------------
+-- Query 5
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT product_id AS "product ID",
+       product_name AS "product name",
+       list_price AS "product price"
+FROM product
+WHERE list_price > 30.00
+  AND list_price < 900.00
+--------------
+
++------------+---------------------+---------------+
+| product ID | product name        | product price |
++------------+---------------------+---------------+
+|       7234 | Classical Music     |         99.99 |
+|       8234 | Pop 3               |         49.99 |
+|      10234 | Z Files             |         49.99 |
+|      14234 | From Another Planet |         49.99 |
+|      16234 | HP Color LaserJet   |        599.00 |
+|      18234 | HP LaserJet Pro     |        200.99 |
+|      19234 | HP LaserJet Pro     |        500.99 |
++------------+---------------------+---------------+
+7 rows in set (0.00 sec)
+
+--------------
+-- Query 6
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT order_id AS "order ID",
+       order_date AS "order date"
+FROM orders
+WHERE month(order_date) LIKE '%3%'
+  AND year(order_date) LIKE '%%15'
+--------------
+
++----------+---------------------+
+| order ID | order date          |
++----------+---------------------+
+|        1 | 2015-03-28 09:40:28 |
+|        2 | 2015-03-28 11:23:20 |
+|        3 | 2015-03-29 09:44:58 |
+|        4 | 2015-03-30 15:22:31 |
+|        5 | 2015-03-31 05:43:11 |
+|        6 | 2015-03-31 18:37:22 |
++----------+---------------------+
+6 rows in set (0.00 sec)
+
+--------------
+-- Query 7
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT order_id AS "order ID",
+       ship_date AS "ship date"
+FROM orders
+WHERE ship_date > "2009-04-01"
+--------------
+
++----------+---------------------+
+| order ID | ship date           |
++----------+---------------------+
+|        1 | 2015-03-30 15:32:51 |
+|        2 | 2015-03-29 12:52:14 |
+|        3 | 2015-03-31 09:11:41 |
+|        4 | 2015-04-03 16:32:21 |
+|        7 | 2015-04-03 10:21:35 |
++----------+---------------------+
+5 rows in set (0.00 sec)
+
+--------------
+-- Query 8
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT order_id AS "order ID",
+       order_date AS "order date"
+FROM orders
+WHERE order_date < "2015-04-01"
+--------------
+
++----------+---------------------+
+| order ID | order date          |
++----------+---------------------+
+|        1 | 2015-03-28 09:40:28 |
+|        2 | 2015-03-28 11:23:20 |
+|        3 | 2015-03-29 09:44:58 |
+|        4 | 2015-03-30 15:22:31 |
+|        5 | 2015-03-31 05:43:11 |
+|        6 | 2015-03-31 18:37:22 |
++----------+---------------------+
+6 rows in set (0.00 sec)
+
+--------------
+-- Query 9
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT product_id AS "product ID",
+       product_code AS "product code",
+       product_name AS "product name"
+FROM product
+WHERE product_name LIKE '_e_l%'
+ORDER BY product_code DESC
+--------------
+
++------------+--------------+-----------------------+
+| product ID | product code | product name          |
++------------+--------------+-----------------------+
+|       6234 | lap9000      | Dell Inspiron 17 5000 |
+|       1234 | comp1230     | Dell XPS 8700         |
++------------+--------------+-----------------------+
+2 rows in set (0.00 sec)
+
+--------------
+-- Query 10
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT product_id, category_id, vendor_id, list_price
+FROM product
+WHERE category_id IN(11, 61) AND vendor_id IN(1, 2)
+  AND list_price < 1100.00
+--------------
+
++------------+-------------+-----------+------------+
+| product_id | category_id | vendor_id | list_price |
++------------+-------------+-----------+------------+
+|       1234 |          11 |         2 |     999.00 |
+|       4234 |          11 |         2 |     989.99 |
++------------+-------------+-----------+------------+
+2 rows in set (0.00 sec)
+
+Bye

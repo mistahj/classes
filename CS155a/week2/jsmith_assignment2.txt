@@ -1,0 +1,133 @@
+yupJustin Smith
+
+Query1: 
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| serial_number  | int(7)      | NO   | PRI | NULL    |       |
+| make           | varchar(7)  | YES  |     | NULL    |       |
+| model          | varchar(25) | YES  |     | NULL    |       |
+| processor_type | varchar(20) | YES  |     | NULL    |       |
+| memory         | varchar(12) | YES  |     | NULL    |       |
+| disk_size      | varchar(12) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+Query 2:
++---------------+------+--------------------+----------------+------------+------------+
+| serial_number | make | model              | processor_type | memory     | disk_size  |
++---------------+------+--------------------+----------------+------------+------------+
+|       9871234 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871245 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871256 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871267 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871278 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
++---------------+------+--------------------+----------------+------------+------------+
+
+Query 3:
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| serial_number   | int(7)      | NO   | PRI | NULL    |       |
+| make            | varchar(7)  | YES  |     | NULL    |       |
+| model           | varchar(25) | YES  |     | NULL    |       |
+| processor_type  | varchar(20) | YES  |     | NULL    |       |
+| memory          | varchar(12) | YES  |     | NULL    |       |
+| disk_size       | varchar(12) | YES  |     | NULL    |       |
+| processor_speed | varchar(6)  | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+
+Query 4:
++---------------+------+--------------------+----------------+------------+------------+-----------------+
+| serial_number | make | model              | processor_type | memory     | disk_size  | processor_speed |
++---------------+------+--------------------+----------------+------------+------------+-----------------+
+|       9871234 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes | NULL            |
+|       9871245 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes | NULL            |
+|       9871256 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes | NULL            |
+|       9871267 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes | NULL            |
+|       9871278 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes | NULL            |
++---------------+------+--------------------+----------------+------------+------------+-----------------+
+
+Query 5:
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| serial_number   | int(7)      | NO   | PRI | NULL    |       |
+| make            | varchar(7)  | YES  |     | NULL    |       |
+| model           | varchar(25) | YES  |     | NULL    |       |
+| processor_type  | varchar(20) | YES  |     | NULL    |       |
+| memory          | varchar(12) | YES  |     | NULL    |       |
+| disk_size       | varchar(12) | YES  |     | NULL    |       |
+| processor_speed | varchar(6)  | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+Query 6:
++---------------+------+--------------------+
+| serial_number | make | model              |
++---------------+------+--------------------+
+|       9871234 | HP   | Pavilion 500-210qe |
+|       9871245 | HP   | Pavilion 500-210qe |
+|       9871256 | HP   | Pavilion 500-210qe |
+|       9871267 | HP   | Pavilion 500-210qe |
+|       9871278 | HP   | Pavilion 500-210qe |
++---------------+------+--------------------+
+
+Query 7:
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| serial_number  | int(7)      | NO   | PRI | NULL    |       |
+| make           | varchar(7)  | YES  |     | NULL    |       |
+| model          | varchar(25) | YES  |     | NULL    |       |
+| processor_type | varchar(20) | YES  |     | NULL    |       |
+| memory         | varchar(12) | YES  |     | NULL    |       |
+| disk_size      | varchar(12) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+Query 8:
++---------------+------+--------------------+----------------+------------+------------+
+| serial_number | make | model              | processor_type | memory     | disk_size  |
++---------------+------+--------------------+----------------+------------+------------+
+|       9871234 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871245 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871256 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871267 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
+|       9871278 | HP   | Pavilion 500-210qe | Intel i5-4530  | 6.0 GBytes | 1.0 TBytes |
++---------------+------+--------------------+----------------+------------+------------+
+
+Query 9:
+Query OK, 0 rows affected (0.03 sec)
+
+Query 10:
++---------------------+
+| Tables_in_bookstore |
++---------------------+
+| address             |
+| administrators      |
+| category            |
+| computer_backup     |
+| customer            |
+| employee            |
+| orderitems          |
+| orders              |
+| product             |
+| store               |
+| vendor              |
++---------------------+
+
+
+Query 11: 
++---------------------+
+| Tables_in_bookstore |
++---------------------+
+| address             |
+| administrators      |
+| category            |
+| customer            |
+| employee            |
+| orderitems          |
+| orders              |
+| product             |
+| store               |
+| vendor              |
++---------------------+

@@ -1,0 +1,98 @@
+Justin Smith
+
+
+Query 1: 
+SHOW TABLES;
++------------------+
+| Tables_in_bookdb |
++------------------+
+| BOOK             |
++------------------+
+1 row in set (0.00 sec)
+
+Query 2: 
+DESC book;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| ISBN         | varchar(10)  | NO   | PRI | NULL    |       |
+| title        | varchar(30)  | YES  |     | NULL    |       |
+| pub_date     | date         | YES  |     | NULL    |       |
+| publisher_id | int(2)       | YES  |     | NULL    |       |
+| price        | decimal(5,2) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+Query 3:
+SELECT * FROM book;
++------------+--------------------------------+------------+--------------+-------+
+| ISBN       | title                          | pub_date   | publisher_id | price |
++------------+--------------------------------+------------+--------------+-------+
+| 0132149871 | HOW TO GET FASTER PIZZA        | 2011-11-06 |            4 | 29.95 |
+| 0299282519 | THE WOK WAY TO COOK            | 2011-09-04 |            4 | 28.75 |
+| 0401140733 | REVENGE OF MICKEY              | 2014-12-05 |            1 | 22.00 |
+| 1059831198 | BODYBUILD IN 10 MINUTES A DAY  | 2021-01-05 |            4 | 30.95 |
+| 1915762492 | HANDCRANKED COMPUTERS          | 2021-01-05 |            3 | 25.00 |
+| 2491748320 | PAINLESS CHILD-REARING         | 2017-07-04 |            5 | 89.95 |
+| 3437212490 | COOKING WITH MUSHROOMS         | 2028-02-04 |            4 | 19.95 |
+| 3957136468 | HOLY GRAIL OF ORACLE           | 2031-12-05 |            3 | 75.95 |
+| 4981341710 | BUILDING A CAR WITH TOOTHPICKS | 2018-03-06 |            2 | 59.95 |
+| 8117949391 | BIG BEAR AND LITTLE DOVE       | 2008-11-05 |            5 |  8.95 |
+| 8843172113 | DATABASE IMPLEMENTATION        | 2004-06-03 |            3 | 55.95 |
+| 9959789321 | E-BUSINESS THE EASY WAY        | 2001-03-06 |            2 | 54.50 |
++------------+--------------------------------+------------+--------------+-------+
+12 rows in set (0.00 sec)
+
+Query 4:
+INSERT INTO BOOK VALUES('9247381001','HOW TO MANAGE THE MANAGER','09-05-03',1,31.95);
+Query OK, 1 row affected (0.00 sec)
+
+INSERT INTO BOOK VALUES('2147428890','SHORTEST POEMS','01-05-05',5,39.95); 
+Query OK, 1 row affected (0.00 sec)
+
+--Query 5: 
+SELECT ISBN, Title, Price FROM book;
++------------+--------------------------------+-------+
+| isbn       | title                          | price |
++------------+--------------------------------+-------+
+| 0132149871 | HOW TO GET FASTER PIZZA        | 29.95 |
+| 0299282519 | THE WOK WAY TO COOK            | 28.75 |
+| 0401140733 | REVENGE OF MICKEY              | 22.00 |
+| 1059831198 | BODYBUILD IN 10 MINUTES A DAY  | 30.95 |
+| 1915762492 | HANDCRANKED COMPUTERS          | 25.00 |
+| 2147428890 | SHORTEST POEMS                 | 39.95 |
+| 2491748320 | PAINLESS CHILD-REARING         | 89.95 |
+| 3437212490 | COOKING WITH MUSHROOMS         | 19.95 |
+| 3957136468 | HOLY GRAIL OF ORACLE           | 75.95 |
+| 4981341710 | BUILDING A CAR WITH TOOTHPICKS | 59.95 |
+| 8117949391 | BIG BEAR AND LITTLE DOVE       |  8.95 |
+| 8843172113 | DATABASE IMPLEMENTATION        | 55.95 |
+| 9247381001 | HOW TO MANAGE THE MANAGER      | 31.95 |
+| 9959789321 | E-BUSINESS THE EASY WAY        | 54.50 |
++------------+--------------------------------+-------+
+14 rows in set (0.00 sec)
+
+--Query 6:
+DELETE FROM book WHERE publisher_id > 10;
+Query OK, 0 rows affected (0.02 sec)
+
+SELECT * FROM book;
++------------+--------------------------------+------------+--------------+-------+
+| ISBN       | title                          | pub_date   | publisher_id | price |
++------------+--------------------------------+------------+--------------+-------+
+| 0132149871 | HOW TO GET FASTER PIZZA        | 2011-11-06 |            4 | 29.95 |
+| 0299282519 | THE WOK WAY TO COOK            | 2011-09-04 |            4 | 28.75 |
+| 0401140733 | REVENGE OF MICKEY              | 2014-12-05 |            1 | 22.00 |
+| 1059831198 | BODYBUILD IN 10 MINUTES A DAY  | 2021-01-05 |            4 | 30.95 |
+| 1915762492 | HANDCRANKED COMPUTERS          | 2021-01-05 |            3 | 25.00 |
+| 2147428890 | SHORTEST POEMS                 | 2001-05-05 |            5 | 39.95 |
+| 2491748320 | PAINLESS CHILD-REARING         | 2017-07-04 |            5 | 89.95 |
+| 3437212490 | COOKING WITH MUSHROOMS         | 2028-02-04 |            4 | 19.95 |
+| 3957136468 | HOLY GRAIL OF ORACLE           | 2031-12-05 |            3 | 75.95 |
+| 4981341710 | BUILDING A CAR WITH TOOTHPICKS | 2018-03-06 |            2 | 59.95 |
+| 8117949391 | BIG BEAR AND LITTLE DOVE       | 2008-11-05 |            5 |  8.95 |
+| 8843172113 | DATABASE IMPLEMENTATION        | 2004-06-03 |            3 | 55.95 |
+| 9247381001 | HOW TO MANAGE THE MANAGER      | 2009-05-03 |            1 | 31.95 |
+| 9959789321 | E-BUSINESS THE EASY WAY        | 2001-03-06 |            2 | 54.50 |
++------------+--------------------------------+------------+--------------+-------+
+14 rows in set (0.00 sec)

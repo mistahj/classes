@@ -1,0 +1,113 @@
+--------------
+/* Justin Smith */
+
+USE bookstore
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*  Query 1 */
+CREATE TABLE computer (
+	serial_number INT(7) NOT NULL,
+	make VARCHAR(7), 
+	model VARCHAR(25),
+	processor_type VARCHAR(20),
+	memory VARCHAR(12),
+	disk_size VARCHAR(12),
+	PRIMARY KEY (serial_number)
+) ENGINE=INNODB
+--------------
+
+Query OK, 0 rows affected (0.02 sec)
+
+--------------
+/* Query 2
+Professor provided code */
+
+/* Query 3 */
+ALTER TABLE computer
+ADD COLUMN processor_speed VARCHAR(6)
+--------------
+
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+/* Query 4 
+Professor provided code */
+
+/* Query 5 */
+DESCRIBE computer
+--------------
+
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| serial_number   | int(7)      | NO   | PRI | NULL    |       |
+| make            | varchar(7)  | YES  |     | NULL    |       |
+| model           | varchar(25) | YES  |     | NULL    |       |
+| processor_type  | varchar(20) | YES  |     | NULL    |       |
+| memory          | varchar(12) | YES  |     | NULL    |       |
+| disk_size       | varchar(12) | YES  |     | NULL    |       |
+| processor_speed | varchar(6)  | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+--------------
+/* Query 6 
+Professor provided code */
+
+/* Query 7 */
+ALTER TABLE computer
+DROP COLUMN processor_speed
+--------------
+
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+/* Query 8 
+Professor provided code */
+
+/* Query 9 */
+RENAME TABLE computer
+TO computer_backup
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/* Query 10 */
+SHOW TABLES
+--------------
+
++---------------------+
+| Tables_in_bookstore |
++---------------------+
+| address             |
+| administrators      |
+| category            |
+| computer_backup     |
+| customer            |
+| employee            |
+| orderitems          |
+| orders              |
+| product             |
+| store               |
+| vendor              |
++---------------------+
+11 rows in set (0.00 sec)
+
+--------------
+/* Query 11 */
+DROP TABLE computer_backup
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+mysql> tee /Users/jsmith/Desktop/CS155a/week2/jsmith_assignment2.sql >
+--------------
+
+Bye
