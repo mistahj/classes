@@ -1,0 +1,215 @@
+--------------
+-- Justin Smith
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+-- Query 1
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+INSERT INTO category (category_id, category_name)
+VALUES (71, 'Video Game')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+-- Query 2
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE category
+SET category_name = "Camera"
+WHERE category_id = 71
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+-- Query 3
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+INSERT INTO product (product_id, category_id, product_code, product_name, description, list_price, discount_percent, date_added, vendor_id)
+VALUES (17234, 71, 'Camera640', 'Canon', 'Canon EOS Rebel T5 DSLR Camera', 755.99, 0,
+        '2015-04-30 13:14:15', 2)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+-- Query 4
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE product
+SET discount_percent = 30
+WHERE category_id = 71
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+-- Query 5
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+DELETE FROM product
+WHERE category_id IN
+      (SELECT category_id
+       FROM category
+       WHERE category_id = 71)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+DELETE FROM category
+WHERE category_id = 71
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+-- Query 6
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE orders
+SET card_type = "American Express"
+WHERE order_id = 9
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+-- Query 7
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+DELETE FROM orderitems
+WHERE order_id IN
+  (SELECT order_id
+   FROM orders
+   WHERE order_id = 5)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+DELETE FROM orders
+WHERE order_id = 5
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+-- Query 8
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE employee
+SET salary = 6500
+WHERE salary = 6000
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+-- Query 9
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+INSERT INTO customer (customer_id, email_address, password, first_name, last_name)
+VALUES (99999, 'rick@raven.com', '', 'Rick', 'Raven')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+-- Query 10
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE customer
+SET password = 'secret'
+WHERE email_address = 'rick@raven.com'
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+-- Query 11
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+UPDATE customer
+SET password = 'reset'
+--------------
+
+Query OK, 9 rows affected (0.00 sec)
+Rows matched: 9  Changed: 9  Warnings: 0
+
+--------------
+-- Query 12
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+  SELECT 'SHIPPED' AS ship_status, order_id, order_date
+  FROM orders
+  WHERE ship_date IS NOT NULL
+UNION
+  SELECT 'NOT SHIPPED' AS ship_status, order_id, order_date
+  FROM orders
+  WHERE ship_date IS NULL
+ORDER BY order_date
+--------------
+
++-------------+----------+---------------------+
+| ship_status | order_id | order_date          |
++-------------+----------+---------------------+
+| SHIPPED     |        1 | 2015-03-28 09:40:28 |
+| SHIPPED     |        2 | 2015-03-28 11:23:20 |
+| SHIPPED     |        3 | 2015-03-29 09:44:58 |
+| SHIPPED     |        4 | 2015-03-30 15:22:31 |
+| NOT SHIPPED |        6 | 2015-03-31 18:37:22 |
+| SHIPPED     |        7 | 2015-04-01 23:11:12 |
+| NOT SHIPPED |        8 | 2015-04-02 11:26:38 |
+| NOT SHIPPED |        9 | 2015-04-03 12:22:31 |
+| NOT SHIPPED |       10 | 2015-05-03 12:22:31 |
+| NOT SHIPPED |       11 | 2015-06-03 12:22:31 |
++-------------+----------+---------------------+
+10 rows in set (0.01 sec)
+
+Bye
