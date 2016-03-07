@@ -8,8 +8,8 @@ body {
   font-size: 1.5em;
 }
 .header {
-  background-image: url("../img/gbackground.jpg");
-  height: 65vh;
+  background-image: url("../img/background.jpg");
+  height: 25vh;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -17,36 +17,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .logo {
-  width: 100%;
-  height: 100%;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
   background-color: #7d7da5;
   background-color: rgba(125, 125, 165, 0.5);
+  padding: 25px;
   border: 4px solid white;
 }
 .content-contain {
   width: 800px;
   margin: 0 auto;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.content-contain p{
-  line-height: 30px;
-  text-align: justify;
+.content-contain p {
+ align-self: center;
+ font-size: .8em;
+ margin-top: 5px;
 }
-.content1 {
-  margin-bottom: 50px;
+.content-contain img {
+  width: 85%;
+  height: 85%;
 }
-.content1 img {
-  float: left;
-  padding: 5px 10px 5px 0;
+.opacity {
+  opacity: 0.8;
 }
-.content2 img {
-  float: right;
-  padding: 5px 0 5px 10px;
+.home {
+  text-align: center;
 }
-.foot {
-  width: 125px;
-  margin: 0 auto;
+.home a {
+  text-decoration: none;
+  color: #ffffff;
 }
